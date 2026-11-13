@@ -1,0 +1,17 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: order-agent
+  ai:
+    mcp:
+      client:
+        # Verify property names against your Spring AI version
+        streamable-http:
+          connections:
+            orders:
+              url: ${MCP_SERVER_URL}
+
+agent:
+  max-tool-iterations: 5
