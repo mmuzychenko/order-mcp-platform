@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: order-mcp-server
+  ai:
+    mcp:
+      server:
+        name: order-mcp-server
+        version: 0.1.0
+        # Streamable HTTP for remote use; verify property names against your Spring AI version
+        protocol: STREAMABLE
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${OAUTH_ISSUER_URI}
+
+order-api:
+  base-url: ${ORDER_API_BASE_URL}
+  timeout: 5s
